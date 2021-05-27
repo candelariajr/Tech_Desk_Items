@@ -15,7 +15,15 @@
         }
 
         body{
-            background-color: #222222;
+            background-color: #00004b;
+            /*background-image: linear-gradient(to top, #00466f ,#051937, #00466f, #007782, #00a562, #78a710);*/
+            /*background-image: linear-gradient(to top, #00466f ,#051937, #00466f, #007782, #00a562);
+            min-height: 2048px;*/
+
+            /*background-color: #00004b;*/
+
+            /*Black background*/
+            /*background-color: black;*/
             overflow-y: visible;
 
         }
@@ -58,11 +66,7 @@
         }
 
         td{
-            font-size: 24px;
-        }
-
-        th{
-            font-size: 20px;
+            font-size: 15px;
         }
 
         .imageIcon{
@@ -71,7 +75,7 @@
             border: 0;
         }
 
-        #itemGroups{
+        #resultTable{
             display:none;
         }
 
@@ -206,7 +210,7 @@
 
         #techDeskTextHeading{
             display: inline-block;
-            margin-top: 25px;
+            margin-top: 50px;
             margin-bottom: 15px;
         }
 
@@ -334,8 +338,7 @@
         function getData(){
             $.get("../getSiteItems.php", function(data, status){
                 if(status === 'success'){
-                    //postData(data);
-                    renderShowAll(JSON.parse(data));
+                    postData(data);
                 }
                 else{
                     alert("Unable to load external data");
@@ -408,7 +411,7 @@
 
                 var durationText = $("<td></td>");
                 //FUCK YOU BOOTSTRAP
-                durationText.css('padding-left', '30px');
+                durationText.css('padding-left', '30px');  
                 durationText.css('vertical-align', 'middle');
                 durationText.text(configState[resultObjName].duration);
                 tr.append(durationText);
@@ -425,11 +428,188 @@
             }
             tableHost.append("<tr><td></td><td></td><td></td></tr>");
         }
+
+        function printTabs(itemsByGroup){
+            //add a group tab for each group
+            /*
+            <div class="panel panel-default">
+                <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                    <h4 class="panel-title">
+                        <a>Group 2</a>
+                    </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        GROUP 2 SHIT
+                    </div>
+                </div>
+            </div>
+            */
+            var groupList = Object.keys(itemsByGroup);
+            var panelContainer = $("#accordion");
+            for(var i = 0; i < groupList.length; i++){
+                //create panel
+                var panel = $("<div>", {
+                    'class': "panel panel-default"}
+                );
+
+                //create panel heading
+                var panelHeading = $("<div>", {
+                    'class': "panel-heading",
+                    'data-toggle': "collapse",
+                    'data-parent': "#accordion",
+                    'data-target': "#collapse" + i,
+                    'href': "#collapse" + i}
+                );
+                var panelTitle = $("<h4>", {
+                    'class' : 'panel-title'
+                });
+                var panelLabel = $("<a>", {
+                    'html' : groupList[i]
+                });
+                //build panel heading and append to panel
+                panelTitle.append(panelLabel);
+                panelHeading.append(panelTitle);
+                panel.append(panelHeading);
+
+
+                //create panel collapse and panel body
+                /*
+                <div id="collapseTwo" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        GROUP 2 SHIT
+                    </div>
+                </div>
+                * */
+                var panelCollapse = $("<div>", {
+                    'id' : "collapse" + i,
+                    'class' : "panel-collapse collapse"
+                });
+                var panelBody = $("<div>", {
+                    'class' : "panel-body"
+                });
+                panelBody.html(generatePanelBody(itemsByGroup[groupList[i]]));
+                panelCollapse.append(panelBody);
+                panel.append(panelCollapse);
+                panelContainer.append(panel);
+
+
+                //JS/bootstrap.min.js
+                // $.getScript( "JS/bootstrap.min.js");
+                // FUCK YOU BOOTSTRAP: WHY CAN'T YOU HANDLE DYNAMIC CONTENT, YOU IMBECILE?!?!!? ITS 2018, NOT 2004!!!
+                /*$(".panel-heading").each(function(){
+                    $(this).click(function(){
+                        console.log(this);
+                    })
+                });
+                */
+
+            }
+        }
+
+        /*
+        * Called by printTabs -
+        * Returns the body to each group, gets passed an array of objects that are printed
+        * within a table under each group label
+        * */
+        function generatePanelBody(array){
+            console.log(array);
+            var table = $("<table>", {
+                'css' : {
+                    'width' : "100%"
+                }
+            });
+            var thead = $("<thead>");
+            var headRow = $("<tr>", {
+                'class' : "groups-head-row"
+            });
+            var headItemName = $("<td>", {
+               'html' : "Item",
+                'css' : {"width" : "7%"}
+            });
+            var headItemSpacer = $("<td>", {
+                'css' : {"width" : "60%"}
+            });
+            var headDurationName = $("<td>", {
+                'html' : "Checkout Duration"
+            });
+            var headQuantityName = $("<td>", {
+                'html' : "Quantity"
+            });
+            headRow.append(headItemName);
+            headRow.append(headItemSpacer);
+            headRow.append(headDurationName);
+            headRow.append(headQuantityName);
+            table.append(headRow);
+            //table.append(thead);
+
+            var tableBody = $("<tbody>");
+            for(var i = 0; i < array.length; i++){
+                //Table Row
+                var tableRow = $("<tr>", {
+                    'class' : "groups-item-row"
+                });
+                //Item Image Cell
+                var itemImageCell = $("<td>");
+                var itemImage = $("<img>", {
+                    'src' : "../assets/" + array[i].img,
+                    'css' : {
+                        'width' : '85px',
+                        'height' : '85px'
+                    }
+                });
+                itemImageCell.append(itemImage);
+                tableRow.append(itemImageCell);
+
+                //Item Name Cell
+                var itemNameCell = $("<td>", {
+                    'html' : array[i].item_name
+                });
+                tableRow.append(itemNameCell);
+
+                //Checkout Duration Cell
+                var checkoutDurationCell = $("<td>", {
+                    'html' : array[i].duration
+                });
+                tableRow.append(checkoutDurationCell);
+
+                //Quantity Cell
+                var quantityCell = $("<td>");
+                var available = $("<div></div>", {
+                    'class' : "quantity-available",
+                    'html' : array[i].count
+                });
+                var total = $("<div></div>", {
+                    'html' : "/ " + array[i].total
+                });
+                quantityCell.append(available);
+                quantityCell.append(total);
+                tableRow.append(quantityCell);
+
+                table.append(tableRow);
+            }
+            table.append(tableBody);
+            return table;
+        }
+
+        function toggleShow(){
+            var toggleButton = $("#toggleButton");
+            if(toggleButton.text() === "Show All"){
+                toggleButton.html("Show Groups");
+            }else{
+                toggleButton.html("Show All");
+            }
+            $("#itemGroups").toggle(200);
+            $("#resultTable").toggle(200);
+        }
     </script>
 </head>
 <body>
 <div class="container-fluid">
     <h1 id="techDeskTextHeading">Tech Desk Items Available</h1>
+    <div id="toggleButtonContainer">
+        <button id="toggleButton" onclick="toggleShow()">Show All</button>
+    </div>
     <div id="itemGroups">
         <div class="panel-group" id="accordion">
         </div>
