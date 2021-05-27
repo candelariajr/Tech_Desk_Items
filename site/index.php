@@ -288,14 +288,14 @@
             "Faculty Zoom Audio Recorder" : {"duration" : "3 weeks", "img" : "zoom.png", "category" : "Faculty/Staff Equipment"},
             "HDMI Cable" : {"duration" : "8 hours", "img" : "HDMIcable.png", "category" : "Accessories"},
             "HDMI to Thunderbolt Adapter" : {"duration" : "8 hours", "img" : "HDMItoThunderbolt.png", "category" : "Accessories"},
-            "Lacie Hard Drive" : {"duration" : "3 days", "img" : "lacieharddrive.png", "category" : "Miscellaneous"},
+            //"Lacie Hard Drive" : {"duration" : "3 days", "img" : "lacieharddrive.png", "category" : "Miscellaneous"},
             //"Lapel Microphone" : {"duration" : "3 days", "img" : "lapelmicrophone.png", "category" : "Audio Equipment"},
             "Mac Laptop" : {"duration" : "8 hours", "img" : "macbook.png", "category" : "Laptops"},
             "Macbook L Connector Charger" : {"duration" : "8 hours", "img" : "macchargerL.png", "category" : "Accessories"},
             "Macbook Pro Charger" : {"duration" : "8 hours", "img" : "maccharger.png", "category" : "Accessories"},
             "Macbook USB-C Charger" : {"duration" : "8 hours", "img" : "macchargerL.png", "category" : "Accessories"},
             "Nikon DSLR" : {"duration" : "3 days", "img" : "NikonDSLR.png", "category" : "Cameras"},
-            "Nikon Point and Shoot Camera" : {"duration" : "3 days", "img" : "NikonCoolpixL810.png", "category" : "Cameras"},
+            //"Nikon Point and Shoot Camera" : {"duration" : "3 days", "img" : "NikonCoolpixL810.png", "category" : "Cameras"},
             "Oculus Go" : {"duration" : "3 days", "img" : "oculusgo.png", "category" : "Miscellaneous"},
             "PC Charger" : {"duration" : "8 hours", "img" : "PCCharger.png", "category" : "Accessories"},
             "Projector Screen" : {"duration" : "3 days", "img" : "ProjectorScreen.png", "category" : "Miscellaneous"},
@@ -309,12 +309,12 @@
             "Surface Pro 4" : {"duration" : "3 days", "img" : "surface pro 3.png", "category" : "Tablets"},
             "USB-C Hub" : {"duration" : "8 hours", "img" : "USBChub.png", "category" : "Accessories"},
             "VGA to Thunderbolt Adapter" : {"duration" : "8 hours", "img" : "vgatothunderbolt.png", "category" : "Accessories"},
-            "Wacom Drawing Tablet" : {"duration" : "3 days", "img" : "wacomdrawingtablet.png", "category" : "Tablets"},
+            //"Wacom Drawing Tablet" : {"duration" : "3 days", "img" : "wacomdrawingtablet.png", "category" : "Tablets"},
             "Windows Laptop" : {"duration" : "8 hours", "img" : "dell.png", "category" : "Laptops"},
             "Wired Mouse" : {"duration" : "3 days", "img" : "wiredmouse.png", "category" : "Accessories"},
             "Yeti Microphone" : {"duration" : "3 days", "img" : "yetiusbmic.png", "category" : "Audio Equipment"},
-            "Zoom Audio Recorder" : {"duration" : "3 days", "img" : "zoom.png", "category" : "Audio Equipment"},
-            "Zoom Q3HD" : {"duration" : "3 days", "img" : "zoom.png", "category" : "Camcorders"}
+            "Zoom Audio Recorder" : {"duration" : "3 days", "img" : "zoom.png", "category" : "Audio Equipment"
+            //"Zoom Q3HD" : {"duration" : "3 days", "img" : "zoom.png", "category" : "Camcorders"}
         };
         getData();
 
