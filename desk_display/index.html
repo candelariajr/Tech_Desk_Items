@@ -1,52 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <script src="JS/jquery-3.1.1.min.js"></script>
-    <script src="JS/jquery-ui.js"></script>
-    <script src="JS/bootstrap.min.js"></script>
-    <script src="JS/bootstrap-select.js"></script>
-    <link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="CSS/item_avail.css">
-    <style>
-        /**
-        *{
-            background-color: #330033 !important;
-            color: #e19b20 !important;
-        }
+  <meta charset="UTF-8">
+  <script src="../JS/jquery-3.1.1.min.js"></script>
+  <script src="../JS/jquery-ui.js"></script>
+  <script src="../JS/bootstrap.min.js"></script>
+  <script src="../JS/bootstrap-select.js"></script>
+  <link rel="stylesheet" type="text/css" href="../CSS/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../CSS/desk_display.css">
+  <style>
+    /**
+    *{
+        background-color: #330033 !important;
+        color: #e19b20 !important;
+    }
+    td, th{
+        border-bottom: 2px solid #e19b20 !important;
+    }**/
 
-        td, th{
-            border-bottom: 2px solid #e19b20 !important;
-        }**/
-
-    </style>
-    <title></title>
+  </style>
+  <title></title>
 </head>
 <body>
-    <div class="container-fluid">
-        <h1>Popular Items</h1>
-        <table class="table" id="resultTable">
-            <thead>
-                <tr>
-                    <th class="col-md-10">Item</th>
-                    <th class="col-md-2">Quantity</th>
-                </tr>
-            </thead>
-            <tbody id="resultTableBody">
+<div class="container-fluid">
+  <h1>Popular Items</h1>
+  <table class="table" id="resultTable">
+    <thead>
+    <tr>
+      <th class="col-md-10">Item</th>
+      <th class="col-md-2">Quantity</th>
+    </tr>
+    </thead>
+    <tbody id="resultTableBody">
 
-            </tbody>
-        </table>
-    </div>
+    </tbody>
+  </table>
+</div>
 </body>
-<script src="JS/item_avail.js"></script>
+<script src="../JS/desk_display.js"></script>
 <script>
 
-    setInterval(function(){
-        var site = $("body");
-        site.hide("blind", 1000);
-        setTimeout(function(){
-            site.show("slide", 1000);
-        }, 3000);
-    }, 120000);
+  setInterval(function(){
+    var site = $("body");
+    site.hide("blind", 1000);
+    setTimeout(function(){
+      site.show("slide", 1000);
+    }, 3000);
+  }, 120000);
 </script>
 </html>
