@@ -313,7 +313,7 @@
             "Windows Laptop" : {"duration" : "8 hours", "img" : "dell.png", "category" : "Laptops"},
             "Wired Mouse" : {"duration" : "3 days", "img" : "wiredmouse.png", "category" : "Accessories"},
             "Yeti Microphone" : {"duration" : "3 days", "img" : "yetiusbmic.png", "category" : "Audio Equipment"},
-            "Zoom Audio Recorder" : {"duration" : "3 days", "img" : "zoom.png", "category" : "Audio Equipment"
+            "Zoom Audio Recorder" : {"duration" : "3 days", "img" : "zoom.png", "category" : "Audio Equipment"}
             //"Zoom Q3HD" : {"duration" : "3 days", "img" : "zoom.png", "category" : "Camcorders"}
         };
         getData();
