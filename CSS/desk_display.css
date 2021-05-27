@@ -1,0 +1,58 @@
+body{
+    background-color: #00004b;
+}
+
+#resultTable{
+    width: 691px; !important
+max-width: 691px; !important
+}
+
+th{
+    font-size: 30px;
+}
+
+body{
+    width: 691px;
+    height: 1255px;
+}
+
+#masterContainer{
+    height:100%;
+    width:100%;
+}
+
+tr{
+    height: 92px;
+    padding: 23px;
+}
+
+h1{
+    font-size: 71px;
+    margin-top: 50px;
+    margin-bottom: 15px;
+}
+
+td{
+    vertical-align: middle;
+    font-size: 35px;
+    padding: 30px; !important;
+    color: white;
+}
+
+th, h1{
+    color: white;
+}
+
+.imageIcon{
+    width: 100px;
+    height: 95px;
+    border: 0;
+}
+
+.labelText{
+    padding-left: 20px;
+}
+
+.quantityText{
+
+}
