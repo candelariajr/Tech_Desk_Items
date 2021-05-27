@@ -53,7 +53,7 @@
                 var itemImage = $("<img>");
                 itemImage.attr('class', 'imageIcon');
                 if(configState.hasOwnProperty(resultObjName)){
-                    itemImage.attr('src', "./assets/" + configState[resultObjName]);
+                    itemImage.attr('src', "../assets/" + configState[resultObjName]);
                 }else{
                     itemImage.attr('visibility', 'hidden');
                 }
