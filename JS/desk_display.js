@@ -25,7 +25,7 @@
 
     //actual function used to get data
     function getData(){
-        $.get("getItems.php", function(data, status){
+        $.get("../getDeskItems.php", function(data, status){
             if(status === 'success'){
                 postData(data);
             }
