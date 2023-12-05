@@ -1,6 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- 
+	
+	TODO:It needs to be navigable by keyboard. Right now I can't tab to or expand the groups with the keyboard.
+		panel-heading when selected needs to do "click" 
+		
+		for(all items with class panel-heading){
+			add tab index
+		}
+		
+		add event listener (spacebar){
+			selected element (click)
+		}
+		
+		
+	It needs to be navigable by screen reader; I can test when you're done revising if needed.
+
+
+	Headings need to be corrected so they don't skip levels; right now it goes from h1 to h4. Since I'll be embedding this on webpages that already have h1 and h2 defined, the easiest fix would be to change the h1 "Tech Desk Items Available" to an h3 since you already have. h4s for categories like Audio Equipment.
+
+	Images need alt text (or an empty alt="" tag if the image is decorative or the alt tag would be redundant, which is probably the case here)
+	
+	Tables need header rows defined
+	
+	-->
     <title>Tech Desk Items</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,6 +37,11 @@
         *{
             user-select: none;
         }
+		
+		h3{
+		    /* Keep font size to h1 while moving scope to h3 */
+			font-size: 25px;
+		}
 
         body{
             background-color: #00004b;
@@ -285,30 +314,30 @@
             "Faculty Projector" : {"duration" : "3 weeks", "img" : "ricoh.png", "category" : "Faculty/Staff Equipment"},
             "Faculty Projector Screen" : {"duration" : "3 weeks", "img" : "ProjectorScreen.png", "category" : "Faculty/Staff Equipment"},
             "Faculty Windows Laptop" : {"duration" : "3 weeks", "img" : "WindowsLaptop.png", "category" : "Faculty/Staff Equipment"},
-            "Faculty Zoom Audio Recorder" : {"duration" : "3 weeks", "img" : "zoom.png", "category" : "Faculty/Staff Equipment"},
+            //"Faculty Zoom Audio Recorder" : {"duration" : "3 weeks", "img" : "zoom.png", "category" : "Faculty/Staff Equipment"},
             "HDMI Cable" : {"duration" : "8 hours", "img" : "HDMIcable.png", "category" : "Accessories"},
-            "HDMI to Thunderbolt Adapter" : {"duration" : "8 hours", "img" : "HDMItoThunderbolt.png", "category" : "Accessories"},
+            //"HDMI to Thunderbolt Adapter" : {"duration" : "8 hours", "img" : "HDMItoThunderbolt.png", "category" : "Accessories"},
             //"Lacie Hard Drive" : {"duration" : "3 days", "img" : "lacieharddrive.png", "category" : "Miscellaneous"},
             //"Lapel Microphone" : {"duration" : "3 days", "img" : "lapelmicrophone.png", "category" : "Audio Equipment"},
             "Mac Laptop" : {"duration" : "8 hours", "img" : "macbook.png", "category" : "Laptops"},
-            "Macbook L Connector Charger" : {"duration" : "8 hours", "img" : "macchargerL.png", "category" : "Accessories"},
+            //"Macbook L Connector Charger" : {"duration" : "8 hours", "img" : "macchargerL.png", "category" : "Accessories"},
             "Macbook Pro Charger" : {"duration" : "8 hours", "img" : "maccharger.png", "category" : "Accessories"},
             "Macbook USB-C Charger" : {"duration" : "8 hours", "img" : "macchargerL.png", "category" : "Accessories"},
             "Nikon DSLR" : {"duration" : "3 days", "img" : "NikonDSLR.png", "category" : "Cameras"},
             //"Nikon Point and Shoot Camera" : {"duration" : "3 days", "img" : "NikonCoolpixL810.png", "category" : "Cameras"},
-            "Oculus Go" : {"duration" : "3 days", "img" : "oculusgo.png", "category" : "Miscellaneous"},
-            "PC Charger" : {"duration" : "8 hours", "img" : "PCCharger.png", "category" : "Accessories"},
+            //"Oculus Go" : {"duration" : "3 days", "img" : "oculusgo.png", "category" : "Miscellaneous"},
+            //"PC Charger" : {"duration" : "8 hours", "img" : "PCCharger.png", "category" : "Accessories"},
             "Projector Screen" : {"duration" : "3 days", "img" : "ProjectorScreen.png", "category" : "Miscellaneous"},
             "Ricoh Projector" : {"duration" : "3 days", "img" : "ricoh.png", "category" : "Miscellaneous"},
-            "Ricoh Theta V 360 Camera" : {"duration" : "3 days", "img" : "ricohtheta.png", "category" : "Cameras"},
+            //"Ricoh Theta V 360 Camera" : {"duration" : "3 days", "img" : "ricohtheta.png", "category" : "Cameras"},
             "Skull Candy Headphones" : {"duration" : "8 hours", "img" : "headphones.png", "category" : "Accessories"},
             "Snowball Microphone" : {"duration" : "3 days", "img" : "snowball.png", "category" : "Audio Equipment"},
-            "Sony HDR-MV1" : {"duration" : "3 days", "img" : "SonyHDRMV1.png", "category" : "Audio Equipment"},
+            //"Sony HDR-MV1" : {"duration" : "3 days", "img" : "SonyHDRMV1.png", "category" : "Audio Equipment"},
             "Sony Tripod" : {"duration" : "3 days", "img" : "SonyTripod.png", "category" : "Tripods"},
             //"Surface 2" : {"duration" : "3 days", "img" : "surface pro 3.png", "category" : "Tablets"},
             "Surface Pro 4" : {"duration" : "3 days", "img" : "surface pro 3.png", "category" : "Tablets"},
             "USB-C Hub" : {"duration" : "8 hours", "img" : "USBChub.png", "category" : "Accessories"},
-            "VGA to Thunderbolt Adapter" : {"duration" : "8 hours", "img" : "vgatothunderbolt.png", "category" : "Accessories"},
+            //"VGA to Thunderbolt Adapter" : {"duration" : "8 hours", "img" : "vgatothunderbolt.png", "category" : "Accessories"},
             //"Wacom Drawing Tablet" : {"duration" : "3 days", "img" : "wacomdrawingtablet.png", "category" : "Tablets"},
             "Windows Laptop" : {"duration" : "8 hours", "img" : "dell.png", "category" : "Laptops"},
             "Wired Mouse" : {"duration" : "3 days", "img" : "wiredmouse.png", "category" : "Accessories"},
@@ -376,24 +405,27 @@
             }
         }
 
+		//Show all table 
         function renderShowAll(resultObj){
             var tableHost = $("#resultTableBody");
             //empty the previous table if it exists
             tableHost.empty();
             for(var i = 0; i < resultObj.length; i++){
                 //configState[[resultObj[i]]["call_number_case"]]["count"]= resultObj[i].count;
-
                 configState[[resultObj[i]["call_number_case"]]]["count"] = resultObj[i]["count"];
                 configState[[resultObj[i]["call_number_case"]]]["total"] = resultObj[i]["total"];
-                //for every {"call_number_case : "foo", "count" : X} object
+                
+				//for every {"call_number_case : "foo", "count" : X} object
                 var tr = $("<tr></tr>");
                 var itemLabel = $("<td></td>");
                 itemLabel.attr('class', 'labelText');
+				
                 //attach label from JSON object
                 //itemLabel.text(resultObj[i].call_number_case);
                 var resultObjName = resultObj[i].call_number_case;
                 var itemImage = $("<img>");
                 itemImage.attr('class', 'imageIcon');
+				
                 //config KV pairs are paired up by result object call_number_cases
                 if(configState.hasOwnProperty(resultObjName) && configState[resultObjName]['img'] !== ""){
                     itemImage.attr('src', "../assets/" + configState[resultObjName].img);
@@ -401,7 +433,8 @@
                     itemImage.css('visibility', 'hidden');
                 }
                 var itemText = $("<span></span>");
-                //FUCK YOU BOOTSTRAP
+                
+				//Bootstrap Adjustment
                 itemText.css('padding-left','30px');
                 itemText.text(resultObjName);
                 itemLabel.append(itemImage);
@@ -410,14 +443,14 @@
                 tr.append(itemLabel);
 
                 var durationText = $("<td></td>");
-                //FUCK YOU BOOTSTRAP
+                //Bootstrap Adjustment
                 durationText.css('padding-left', '30px');  
                 durationText.css('vertical-align', 'middle');
                 durationText.text(configState[resultObjName].duration);
                 tr.append(durationText);
 
                 var quantityLabel = $("<td></td>");
-                //FUCK YOU BOOTSTRAP
+                //Bootstrap Adjustment
                 quantityLabel.css('padding-left','40px');
                 quantityLabel.css('vertical-align','middle');
                 quantityLabel.html("<span class='quantity-available'>" + configState[resultObjName].count + "</span>" +
@@ -426,6 +459,7 @@
 
                 tableHost.append(tr);
             }
+			//close up HTML
             tableHost.append("<tr><td></td><td></td><td></td></tr>");
         }
 
@@ -592,6 +626,7 @@
             return table;
         }
 
+		//Attached to toggle Show ALl button
         function toggleShow(){
             var toggleButton = $("#toggleButton");
             if(toggleButton.text() === "Show All"){
@@ -606,20 +641,29 @@
 </head>
 <body>
 <div class="container-fluid">
-    <h1 id="techDeskTextHeading">Tech Desk Items Available</h1>
+    <h3 id="techDeskTextHeading">Tech Desk Items Available</h3>
     <div id="toggleButtonContainer">
-        <button id="toggleButton" onclick="toggleShow()">Show All</button>
+        <button alt="Tap here to toggle between grouped list and regular list" id="toggleButton" onclick="toggleShow()">Show All</button>
     </div>
+	
+	<!-- 
+		Items Displayed as Groups 
+	-->
     <div id="itemGroups">
         <div class="panel-group" id="accordion">
         </div>
     </div>
+	
+	<!-- 
+		Items Displayed as Full List
+	-->
     <table class="table" id="resultTable">
+		<caption>Tech Desk Items Available</caption>
         <thead>
         <tr>
-            <th class="col-md-8">Item</th>
-            <th class="col-md-2">Checkout Duration</th>
-            <th class="col-md-2">Quantity</th>
+            <th scope="col" alt="Item Name" class="col-md-8">Item</th>
+            <th scope="col" alt="Checkout Duration" class="col-md-2">Checkout Duration</th>
+            <th scope="col" alt="Quantity" class="col-md-2">Quantity</th>
         </tr>
         </thead>
         <tbody id="resultTableBody">
